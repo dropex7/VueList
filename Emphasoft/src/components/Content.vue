@@ -1,6 +1,6 @@
 <template>
   <div class="container_login">
-    <SighInForm v-if="!isAccessed" v-on:getData="getData($event)" />
+    <SignInForm v-if="!isAccessed" v-on:getData="getData($event)" />
     <div v-else-if="isAccessed">
       <ListOfUsers
         v-on:sortById="sortById"
@@ -13,7 +13,7 @@
 
 <script>
 import axios from "axios";
-import SighInForm from "./SighInForm";
+import SignInForm from "./SignInForm";
 import ListOfUsers from "./ListOfUsers";
 export default {
   data() {
@@ -25,7 +25,7 @@ export default {
     };
   },
   components: {
-    SighInForm,
+    SignInForm,
     ListOfUsers,
   },
   methods: {
