@@ -4,6 +4,7 @@
     <div v-else-if="isAccessed">
       <ListOfUsers
         v-on:sortById="sortById"
+        v-on:logOut="logOut"
         v-on:sortByUsername="sortByUsername"
         v-bind:dataUsers="dataUsers"
       />
@@ -78,6 +79,10 @@ export default {
           return b.id - a.id;
         });
       }
+    },
+    logOut() {
+      this.isAccessed = false;
+      this.dataUsers = [];
     },
   },
 };

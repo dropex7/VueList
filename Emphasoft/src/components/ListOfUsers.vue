@@ -1,5 +1,6 @@
 <template>
   <div class="content_users_list">
+    <button class="content_users_list_logout" v-on:click="$emit('logOut')">Log Out</button>
     <table class="list_table" border="1">
       <thead class="list_table_header">
         <tr>
@@ -63,9 +64,24 @@ export default {
 <style>
 .content_users_list {
   width: 100%;
-  margin-top: 1%;
+  margin-top: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+.content_users_list_logout {
+  width: 70px;
+  margin-bottom: 4px;
+  background-color: #44475a;
+  border-radius: 6%;
+  border-color: #f8f8f8;
+  color: #f8f8f8;
+  padding: 3px 3px;
+}
+
+.content_users_list_logout:hover {
+  background-color: #8be9fd;
+  color: #44475a;
 }
 .table_sort_btn {
   width: 14px;
@@ -110,13 +126,6 @@ export default {
   tr {
     display: block;
   }
-
-  /* Hide table headers (but not display: none;, for accessibility)
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  } */
 
   tr {
     border: 1px solid #ccc;
